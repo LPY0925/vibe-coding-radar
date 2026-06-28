@@ -1,0 +1,1483 @@
+:root {
+  --背景: #f7f8fa;
+  --纸面: #ffffff;
+  --墨色: #10131a;
+  --正文: #3c4658;
+  --浅字: #7b8494;
+  --边线: #dce2ea;
+  --淡线: #edf1f5;
+  --绿色: #08a64b;
+  --绿色深: #007c38;
+  --绿色浅: #e9f9ef;
+  --蓝色: #1269e8;
+  --蓝色浅: #ebf3ff;
+  --珊瑚: #ff5a45;
+  --珊瑚浅: #fff0ed;
+  --黄色: #f6b600;
+  --阴影: 0 22px 60px rgba(17, 24, 39, 0.09);
+  --柔影: 0 12px 28px rgba(17, 24, 39, 0.06);
+  --圆角: 8px;
+  --栏宽: min(100% - 64px, 1340px);
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+  color: var(--墨色);
+  background: var(--背景);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    linear-gradient(90deg, rgba(16, 19, 26, 0.035) 1px, transparent 1px) 0 0 / 72px 72px,
+    linear-gradient(0deg, rgba(16, 19, 26, 0.028) 1px, transparent 1px) 0 0 / 72px 72px,
+    var(--背景);
+}
+
+button,
+select,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
+.图标库 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.顶部栏 {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  width: 100%;
+  height: 74px;
+  padding: 0 max(24px, calc((100vw - 1340px) / 2));
+  border-bottom: 1px solid var(--边线);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.品牌,
+.页脚品牌 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.品牌 {
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+.品牌图标 {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: var(--绿色);
+}
+
+.品牌图标 svg {
+  width: 36px;
+  height: 36px;
+}
+
+.导航 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1 1 auto;
+}
+
+.导航 a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 74px;
+  padding: 0 22px;
+  border-bottom: 3px solid transparent;
+  color: #1e2633;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.导航 svg {
+  width: 19px;
+  height: 19px;
+}
+
+.导航 a:hover,
+.导航 a:focus-visible {
+  color: var(--绿色);
+  border-bottom-color: var(--绿色);
+  outline: none;
+}
+
+.顶部动作,
+.小按钮,
+.筛选丸,
+.榜单按钮 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--边线);
+  border-radius: var(--圆角);
+  background: var(--纸面);
+  color: #1f2937;
+  font-weight: 750;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.顶部动作 {
+  height: 40px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+.顶部动作:hover,
+.小按钮:hover,
+.筛选丸:hover,
+.榜单按钮:hover {
+  border-color: var(--绿色);
+  color: var(--绿色);
+}
+
+.首屏 {
+  display: grid;
+  grid-template-columns: minmax(520px, 0.82fr) minmax(540px, 1fr);
+  gap: clamp(36px, 4vw, 58px);
+  align-items: center;
+  width: var(--栏宽);
+  min-height: 760px;
+  margin: 0 auto;
+  padding: 78px 0 48px;
+}
+
+.首屏文案 h1 {
+  max-width: 650px;
+  margin: 0;
+  color: #080b11;
+  font-size: clamp(54px, 5.15vw, 78px);
+  line-height: 1.04;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.首屏说明 {
+  max-width: 620px;
+  margin: 28px 0 0;
+  color: var(--正文);
+  font-size: clamp(20px, 2vw, 27px);
+  line-height: 1.7;
+  font-weight: 520;
+}
+
+.首屏按钮组,
+.明星动作 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.首屏按钮组 {
+  margin-top: 36px;
+}
+
+.按钮 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: var(--圆角);
+  font-size: 16px;
+  font-weight: 850;
+  letter-spacing: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.主要按钮 {
+  background: linear-gradient(180deg, #12ba5c, #049543);
+  color: #fff;
+  box-shadow: 0 14px 24px rgba(8, 166, 75, 0.22);
+}
+
+.主要按钮:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 34px rgba(8, 166, 75, 0.28);
+}
+
+.次要按钮 {
+  border-color: var(--边线);
+  background: var(--纸面);
+  color: #162033;
+}
+
+.次要按钮:hover {
+  border-color: var(--蓝色);
+  color: var(--蓝色);
+  transform: translateY(-1px);
+}
+
+.暗色按钮 {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}
+
+.暗色按钮:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--柔影);
+}
+
+.满宽 {
+  width: 100%;
+}
+
+.承诺清单 {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  color: #485366;
+  font-size: 15px;
+  font-weight: 720;
+}
+
+.承诺清单 span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.承诺清单 svg {
+  width: 18px;
+  height: 18px;
+  color: var(--绿色);
+}
+
+.雷达工作台,
+.项目工作台,
+.项目详情,
+.雷达读数,
+.行动条 {
+  border: 1px solid var(--边线);
+  border-radius: var(--圆角);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--阴影);
+}
+
+.雷达工作台 {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.工作台头部,
+.雷达筛选条,
+.详情头部,
+.提示词头,
+.GitHub行 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.工作台头部 {
+  height: 70px;
+  padding: 0 26px;
+  border-bottom: 1px solid var(--淡线);
+}
+
+.工作台头部 strong {
+  margin-right: 12px;
+  font-size: 22px;
+  font-weight: 850;
+}
+
+.扫描状态 {
+  position: relative;
+  color: var(--浅字);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.扫描状态::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 999px;
+  background: var(--绿色);
+  box-shadow: 0 0 0 6px rgba(8, 166, 75, 0.12);
+}
+
+.小按钮 {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+.雷达主体 {
+  display: grid;
+  grid-template-columns: minmax(360px, 1fr) 270px;
+  gap: 24px;
+  padding: 28px 30px;
+}
+
+.雷达图 {
+  position: relative;
+  aspect-ratio: 1;
+  min-height: 420px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, transparent 0 18%, rgba(8, 166, 75, 0.08) 18.2% 19%, transparent 19.2% 35%, rgba(16, 19, 26, 0.08) 35.2% 35.8%, transparent 36% 52%, rgba(16, 19, 26, 0.08) 52.2% 52.8%, transparent 53% 69%, rgba(16, 19, 26, 0.08) 69.2% 69.8%, transparent 70%),
+    conic-gradient(from 320deg, rgba(8, 166, 75, 0.46) 0deg, rgba(8, 166, 75, 0.08) 58deg, transparent 60deg 360deg);
+  overflow: visible;
+}
+
+.雷达图::before,
+.雷达图::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    linear-gradient(90deg, transparent calc(50% - 0.5px), rgba(16, 19, 26, 0.12) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+    linear-gradient(0deg, transparent calc(50% - 0.5px), rgba(16, 19, 26, 0.12) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+}
+
+.雷达图::after {
+  transform: rotate(120deg);
+}
+
+.雷达光束 {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(45deg, rgba(8, 166, 75, 0.45), transparent 68%);
+  transform-origin: 0 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  animation: 扫描 5.5s linear infinite;
+}
+
+@keyframes 扫描 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.雷达中心 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  border: 6px solid white;
+  border-radius: 999px;
+  background: var(--绿色);
+  box-shadow: 0 0 0 1px rgba(8, 166, 75, 0.2), 0 12px 28px rgba(8, 166, 75, 0.25);
+}
+
+.雷达点 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #b9c1ca;
+}
+
+.点一 {
+  left: 31%;
+  top: 28%;
+  background: var(--绿色);
+}
+
+.点二 {
+  left: 29%;
+  top: 66%;
+  background: var(--蓝色);
+}
+
+.点三 {
+  left: 63%;
+  top: 66%;
+  background: var(--珊瑚);
+}
+
+.点四 {
+  left: 72%;
+  top: 39%;
+}
+
+.轴标签 {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid currentColor;
+  border-radius: var(--圆角);
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.标签好玩 {
+  left: 50%;
+  top: 7%;
+  transform: translateX(-50%);
+  color: var(--绿色);
+}
+
+.标签好用 {
+  left: 6%;
+  bottom: 17%;
+  color: var(--蓝色);
+}
+
+.标签好搓 {
+  right: 0;
+  bottom: 15%;
+  color: var(--珊瑚);
+}
+
+.精选卡 {
+  align-self: center;
+  min-height: 360px;
+  padding: 24px;
+  border: 1px solid var(--边线);
+  border-radius: var(--圆角);
+  background: var(--纸面);
+  box-shadow: var(--柔影);
+}
+
+.标签行,
+.详情标签 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.标签行 span,
+.详情标签 span,
+.项目标签,
+.趋势标签 {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: #eef2f6;
+  color: #586171;
+  font-size: 12px;
+  font-weight: 780;
+}
+
+.精选卡 h2 {
+  margin: 18px 0 10px;
+  font-size: 25px;
+  line-height: 1.25;
+}
+
+.精选卡 p {
+  margin: 0;
+  color: var(--正文);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.精选卡 ul {
+  margin: 22px 0 28px;
+  padding: 18px 18px 18px 32px;
+  border: 1px solid #d8efe0;
+  border-radius: var(--圆角);
+  background: var(--绿色浅);
+  color: #244530;
+  line-height: 1.9;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.雷达筛选条 {
+  padding: 14px 22px;
+  border-top: 1px solid var(--淡线);
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.筛选丸 {
+  height: 32px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.筛选丸.当前 {
+  color: white;
+  background: var(--绿色);
+  border-color: var(--绿色);
+}
+
+.方向区,
+.项目区,
+.明星区 {
+  width: var(--栏宽);
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.方向区 {
+  border-top: 1px solid var(--边线);
+}
+
+.区块标题 h2 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+.区块标题 p {
+  max-width: 720px;
+  margin: 12px 0 0;
+  color: var(--正文);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.行标题 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.方向网格 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.方向卡 {
+  min-height: 210px;
+  padding: 28px;
+  border: 1px solid var(--边线);
+  border-radius: var(--圆角);
+  background:
+    radial-gradient(circle at 92% 78%, rgba(8, 166, 75, 0.18), transparent 0 28%, transparent 29%),
+    var(--纸面);
+  overflow: hidden;
+}
+
+.方向卡 svg {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  padding: 11px;
+  border-radius: var(--圆角);
+  color: #fff;
+  background: var(--绿色);
+  box-shadow: 0 12px 24px rgba(8, 166, 75, 0.18);
+}
+
+.方向卡 h3 {
+  margin: 20px 0 8px;
+  font-size: 22px;
+}
+
+.方向卡 p {
+  margin: 0;
+  color: var(--正文);
+  line-height: 1.7;
+}
+
+.方向卡 ul {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: #1f2937;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.方向卡.好用 {
+  background:
+    radial-gradient(circle at 92% 78%, rgba(18, 105, 232, 0.18), transparent 0 28%, transparent 29%),
+    var(--纸面);
+}
+
+.方向卡.好用 svg {
+  background: var(--蓝色);
+  box-shadow: 0 12px 24px rgba(18, 105, 232, 0.18);
+}
+
+.方向卡.好搓 {
+  background:
+    radial-gradient(circle at 92% 78%, rgba(255, 90, 69, 0.16), transparent 0 28%, transparent 29%),
+    var(--纸面);
+}
+
+.方向卡.好搓 svg {
+  background: var(--珊瑚);
+  box-shadow: 0 12px 24px rgba(255, 90, 69, 0.16);
+}
+
+.迷你雷达 {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, transparent 0 22%, rgba(8, 166, 75, 0.16) 22.5% 23%, transparent 23.5% 45%, rgba(16, 19, 26, 0.12) 45.5% 46%, transparent 46.5% 68%, rgba(16, 19, 26, 0.12) 68.5% 69%, transparent 69.5%),
+    conic-gradient(from 320deg, rgba(8, 166, 75, 0.44), transparent 95deg),
+    white;
+}
+
+.分类标签组,
+.榜单过滤 {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  margin-top: 32px;
+  border-bottom: 1px solid var(--边线);
+}
+
+.分类标签 {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 54px;
+  padding: 0 8px;
+  border: 0;
+  border-bottom: 4px solid transparent;
+  background: transparent;
+  color: #344052;
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.分类标签.当前 {
+  color: var(--绿色);
+  border-bottom-color: var(--绿色);
+}
+
+.分类标签:nth-child(2).当前 {
+  color: var(--蓝色);
+  border-bottom-color: var(--蓝色);
+}
+
+.分类标签:nth-child(3).当前 {
+  color: var(--珊瑚);
+  border-bottom-color: var(--珊瑚);
+}
+
+.过滤栏 {
+  display: flex;
+  align-items: end;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.过滤栏 label {
+  display: grid;
+  gap: 8px;
+  color: var(--浅字);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.过滤栏 select {
+  min-width: 160px;
+  height: 46px;
+  padding: 0 38px 0 14px;
+  border: 1px solid var(--边线);
+  border-radius: var(--圆角);
+  background: var(--纸面);
+  color: #1f2937;
+  font-weight: 750;
+}
+
+.项目工作台 {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  margin-top: 28px;
+  overflow: hidden;
+}
+
+.项目列表 {
+  border-right: 1px solid var(--边线);
+  background: #fbfcfd;
+}
+
+.项目项 {
+  display: grid;
+  grid-template-columns: 58px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  min-height: 108px;
+  padding: 18px 22px;
+  border: 0;
+  border-left: 4px solid transparent;
+  border-bottom: 1px solid var(--淡线);
+  background: transparent;
+  text-align: left;
+}
+
+.项目项:hover,
+.项目项.当前 {
+  background: linear-gradient(90deg, rgba(8, 166, 75, 0.09), rgba(255, 255, 255, 0));
+  border-left-color: var(--绿色);
+}
+
+.项目项 h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.项目图标 {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: var(--圆角);
+  background: var(--绿色);
+  color: #fff;
+  font-size: 19px;
+  font-weight: 900;
+  box-shadow: 0 12px 22px rgba(8, 166, 75, 0.18);
+}
+
+.项目周期 {
+  color: #5d6675;
+  font-size: 14px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.项目详情 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.详情头部 {
+  min-height: 104px;
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--淡线);
+}
+
+.详情头部 h3 {
+  margin: 0 0 10px;
+  font-size: 26px;
+}
+
+.难度盒 {
+  display: grid;
+  gap: 6px;
+  justify-items: end;
+  margin-left: auto;
+  color: var(--浅字);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.难度盒 strong {
+  color: var(--绿色);
+  font-size: 16px;
+}
+
+.详情标签页 {
+  display: flex;
+  border-bottom: 1px solid var(--边线);
+  overflow-x: auto;
+}
+
+.详情页签 {
+  min-width: 138px;
+  height: 54px;
+  padding: 0 18px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #4b5563;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.详情页签.当前 {
+  color: var(--绿色);
+  border-bottom-color: var(--绿色);
+}
+
+.详情内容区 {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.42fr) minmax(360px, 0.58fr);
+  min-height: 330px;
+  border-bottom: 1px solid var(--淡线);
+}
+
+.理由列表 {
+  display: grid;
+  align-content: start;
+  gap: 22px;
+  padding: 34px 28px;
+  border-right: 1px solid var(--淡线);
+}
+
+.理由项 {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 14px;
+}
+
+.理由项 svg {
+  color: var(--绿色);
+  width: 28px;
+  height: 28px;
+}
+
+.理由项 h4 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.理由项 p {
+  margin: 0;
+  color: var(--正文);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.预览框 {
+  display: grid;
+  place-items: center;
+  padding: 34px;
+  background:
+    linear-gradient(90deg, rgba(16, 19, 26, 0.035) 1px, transparent 1px) 0 0 / 34px 34px,
+    linear-gradient(0deg, rgba(16, 19, 26, 0.03) 1px, transparent 1px) 0 0 / 34px 34px,
+    #fcfdff;
+}
+
+.预览设备 {
+  width: min(100%, 600px);
+  min-height: 246px;
+  border: 1px solid #ccd5e1;
+  border-radius: var(--圆角);
+  background: var(--纸面);
+  box-shadow: 0 18px 34px rgba(31, 41, 55, 0.1);
+  overflow: hidden;
+}
+
+.预览栏 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--淡线);
+  color: #4b5563;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.预览内容 {
+  display: grid;
+  grid-template-columns: 145px 1fr;
+  gap: 16px;
+  padding: 16px;
+}
+
+.预览侧栏 {
+  display: grid;
+  gap: 10px;
+}
+
+.预览线,
+.预览按钮,
+.预览缩略图 {
+  border-radius: 6px;
+  background: #edf2f7;
+}
+
+.预览线 {
+  height: 12px;
+}
+
+.预览按钮 {
+  height: 36px;
+  background: var(--蓝色);
+}
+
+.预览画廊 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.预览缩略图 {
+  aspect-ratio: 1.4;
+  background:
+    linear-gradient(135deg, rgba(8, 166, 75, 0.85), rgba(18, 105, 232, 0.22)),
+    #dbeafe;
+}
+
+.提示词区域 {
+  padding: 24px 26px 22px;
+}
+
+.提示词头 {
+  margin-bottom: 12px;
+}
+
+.复制按钮 {
+  min-height: 40px;
+  padding: 0 14px;
+  background: var(--蓝色);
+  color: #fff;
+}
+
+pre {
+  margin: 0;
+  min-height: 132px;
+  max-height: 210px;
+  overflow: auto;
+  padding: 16px;
+  border: 1px solid #a8c7ff;
+  border-radius: var(--圆角);
+  background: linear-gradient(180deg, #f7fbff, #ffffff);
+  color: #19335e;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 13px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.GitHub行 {
+  margin-top: 16px;
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 760;
+}
+
+.GitHub行 a {
+  color: var(--蓝色);
+}
+
+.明星区 {
+  padding-bottom: 0;
+}
+
+.榜单过滤 {
+  gap: 12px;
+  border-bottom: 0;
+}
+
+.榜单按钮 {
+  height: 46px;
+  padding: 0 18px;
+}
+
+.榜单按钮.当前 {
+  color: #fff;
+  border-color: var(--绿色);
+  background: var(--绿色);
+}
+
+.明星布局 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 24px;
+  margin-top: 22px;
+}
+
+.明星表 {
+  border: 1px solid var(--边线);
+  border-radius: var(--圆角);
+  background: var(--纸面);
+  overflow: hidden;
+}
+
+.明星行 {
+  display: grid;
+  grid-template-columns: 70px minmax(220px, 1.2fr) 140px 140px minmax(260px, 1fr) 150px;
+  align-items: center;
+  min-height: 92px;
+  border-bottom: 1px solid var(--淡线);
+}
+
+.明星行:last-child {
+  border-bottom: 0;
+}
+
+.明星行.表头 {
+  min-height: 52px;
+  background: #101827;
+  color: #e8edf5;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.明星行 > * {
+  padding: 0 18px;
+}
+
+.排名 {
+  color: var(--绿色);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.项目名块 {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.项目名块 strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.项目名块 span,
+.明星说明,
+.增长 {
+  color: var(--正文);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.明星图标 {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--圆角);
+  background: #111827;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.增长 {
+  color: var(--绿色);
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.迷你折线 {
+  width: 74px;
+  height: 28px;
+  margin-top: 4px;
+  background: linear-gradient(140deg, transparent 0 20%, rgba(8, 166, 75, 0.16) 20% 55%, transparent 55% 100%);
+  clip-path: polygon(0 82%, 16% 55%, 29% 62%, 43% 34%, 58% 45%, 76% 20%, 100% 32%, 100% 100%, 0 100%);
+}
+
+.语言点 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1f2937;
+  font-weight: 760;
+}
+
+.语言点::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--蓝色);
+}
+
+.语言点.TypeScript::before {
+  background: var(--黄色);
+}
+
+.语言点.Rust::before {
+  background: #e85d04;
+}
+
+.明星行 .小按钮 {
+  width: 112px;
+}
+
+.雷达读数 {
+  padding: 24px;
+  box-shadow: none;
+}
+
+.雷达读数 h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.周范围 {
+  margin: 8px 0 18px;
+  color: var(--浅字);
+  font-weight: 700;
+}
+
+.读数组 {
+  display: grid;
+  gap: 0;
+  margin-bottom: 20px;
+}
+
+.读数组 article {
+  padding: 18px 0;
+  border-top: 1px solid var(--淡线);
+}
+
+.读数组 strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.读数组 p {
+  margin: 0;
+  color: var(--正文);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.行动条 {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.95fr) minmax(260px, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+  margin-top: 24px;
+  padding: 18px;
+  border-color: var(--蓝色);
+  box-shadow: none;
+}
+
+.行动条 strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.行动条 p {
+  margin: 0;
+  color: var(--浅字);
+}
+
+.行动条 code {
+  display: block;
+  padding: 16px;
+  border: 1px dashed #9fc0f8;
+  border-radius: var(--圆角);
+  color: var(--蓝色);
+  background: #f7fbff;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.页脚 {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) repeat(3, 140px);
+  gap: 38px;
+  width: 100%;
+  margin-top: 48px;
+  padding: 48px max(24px, calc((100vw - 1340px) / 2));
+  color: #e5edf7;
+  background:
+    radial-gradient(circle at 92% 50%, rgba(8, 166, 75, 0.18), transparent 0 18%, transparent 19%),
+    #111923;
+}
+
+.页脚品牌 {
+  align-items: flex-start;
+}
+
+.页脚品牌 strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.页脚品牌 p {
+  max-width: 420px;
+  margin: 0;
+  color: #9ca8ba;
+  line-height: 1.8;
+}
+
+.页脚列 {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.页脚列 a {
+  color: #cdd7e6;
+  font-weight: 720;
+}
+
+.提示浮层 {
+  position: fixed;
+  top: 92px;
+  right: 28px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 220px;
+  min-height: 56px;
+  padding: 0 18px;
+  border: 1px solid var(--边线);
+  border-radius: var(--圆角);
+  background: var(--纸面);
+  box-shadow: var(--阴影);
+  color: #182233;
+  font-weight: 850;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.提示浮层 svg {
+  color: var(--绿色);
+}
+
+.提示浮层.显示 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .首屏,
+  .项目工作台,
+  .明星布局 {
+    grid-template-columns: 1fr;
+  }
+
+  .首屏 {
+    min-height: auto;
+    padding-top: 52px;
+  }
+
+  .项目列表 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-right: 0;
+    border-bottom: 1px solid var(--边线);
+  }
+
+  .明星行 {
+    grid-template-columns: 60px minmax(210px, 1fr) 110px 130px 1fr;
+  }
+
+  .明星行 > :last-child,
+  .明星行.表头 > :last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  :root {
+    --栏宽: min(100% - 32px, 760px);
+  }
+
+  .顶部栏 {
+    height: auto;
+    min-height: 70px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  .品牌 {
+    width: 100%;
+    justify-content: center;
+    font-size: 21px;
+  }
+
+  .导航 {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .导航 a {
+    height: 42px;
+    padding: 0 12px;
+    white-space: nowrap;
+  }
+
+  .顶部动作 {
+    display: none;
+  }
+
+  .首屏文案 h1 {
+    font-size: clamp(44px, 13vw, 66px);
+  }
+
+  .首屏说明 {
+    font-size: 18px;
+  }
+
+  .雷达主体,
+  .详情内容区,
+  .行动条,
+  .页脚 {
+    grid-template-columns: 1fr;
+  }
+
+  .雷达图 {
+    min-height: auto;
+  }
+
+  .精选卡 {
+    min-height: auto;
+  }
+
+  .方向网格,
+  .项目列表 {
+    grid-template-columns: 1fr;
+  }
+
+  .行标题 {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .迷你雷达 {
+    display: none;
+  }
+
+  .详情内容区 {
+    min-height: 0;
+  }
+
+  .理由列表 {
+    border-right: 0;
+    border-bottom: 1px solid var(--淡线);
+  }
+
+  .预览内容 {
+    grid-template-columns: 1fr;
+  }
+
+  .明星表 {
+    overflow-x: auto;
+  }
+
+  .明星行 {
+    min-width: 820px;
+  }
+
+  .页脚 {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 560px) {
+  .首屏 {
+    padding-top: 34px;
+  }
+
+  .首屏按钮组,
+  .明星动作,
+  .按钮 {
+    width: 100%;
+  }
+
+  .首屏按钮组 .按钮,
+  .明星动作 .按钮 {
+    width: 100%;
+  }
+
+  .承诺清单 {
+    display: grid;
+    gap: 12px;
+  }
+
+  .雷达主体,
+  .工作台头部,
+  .提示词区域,
+  .详情头部 {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .详情头部 {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .难度盒 {
+    justify-items: start;
+    width: 100%;
+  }
+
+  .项目项 {
+    grid-template-columns: 52px 1fr;
+  }
+
+  .项目周期 {
+    grid-column: 2;
+  }
+
+  .提示浮层 {
+    left: 16px;
+    right: 16px;
+    top: 18px;
+  }
+}
