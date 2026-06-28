@@ -8,7 +8,7 @@
 
 # ===== 配置 =====
 $项目路径 = "D:\源神\Vibe Coding雷达"
-$GitHub用户名 = ""  # ← 请填入你的 GitHub 用户名
+$GitHub用户名 = "LPY0925"
 $仓库名 = "vibe-coding-radar"
 $分支名 = "main"
 
