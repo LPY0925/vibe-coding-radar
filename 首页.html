@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibe Coding雷达</title>
+    <link rel="stylesheet" href="./样式.css" />
+  </head>
+  <body>
+    <svg class="图标库" aria-hidden="true">
+      <symbol id="图标-雷达" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M12 12l6-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+        <path d="M12 3v3M21 12h-3M12 21v-3M3 12h3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+      </symbol>
+      <symbol id="图标-游戏" viewBox="0 0 24 24">
+        <path d="M7 15h-1a4 4 0 0 1 0-8h12a4 4 0 0 1 0 8h-1l-2 3-3-3h-2l-3 3-3-3Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" />
+        <path d="M7 11h4M9 9v4M16.5 10h.01M19 12h.01" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+      </symbol>
+      <symbol id="图标-效率" viewBox="0 0 24 24">
+        <rect x="4" y="4" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="2" />
+        <rect x="14" y="4" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="2" />
+        <rect x="4" y="14" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="2" />
+        <rect x="14" y="14" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="2" />
+      </symbol>
+      <symbol id="图标-硬件" viewBox="0 0 24 24">
+        <path d="M8 3h8M8 21h8M6 7h12v10H6z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" />
+        <path d="M9 10h.01M12 10h.01M15 10h.01M9 14h6M3 9h3M3 15h3M18 9h3M18 15h3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+      </symbol>
+      <symbol id="图标-复制" viewBox="0 0 24 24">
+        <rect x="8" y="8" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M5 15H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2" />
+      </symbol>
+      <symbol id="图标-外链" viewBox="0 0 24 24">
+        <path d="M14 4h6v6M20 4l-9 9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+        <path d="M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+      </symbol>
+      <symbol id="图标-星" viewBox="0 0 24 24">
+        <path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" />
+      </symbol>
+      <symbol id="图标-箭头" viewBox="0 0 24 24">
+        <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+      </symbol>
+      <symbol id="图标-对勾" viewBox="0 0 24 24">
+        <path d="m5 13 4 4L19 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+      </symbol>
+    </svg>
+
+    <header class="顶部栏">
+      <a class="品牌" href="#顶部" aria-label="回到顶部">
+        <span class="品牌图标"><svg><use href="#图标-雷达" /></svg></span>
+        <span>Vibe Coding雷达</span>
+      </a>
+      <nav class="导航" aria-label="主导航">
+        <a href="#项目雷达"><svg><use href="#图标-雷达" /></svg>项目雷达</a>
+        <a href="#开工提示词"><svg><use href="#图标-复制" /></svg>开工提示词</a>
+        <a href="#明星项目"><svg><use href="#图标-星" /></svg>明星项目</a>
+        <a href="#新手阶段"><svg><use href="#图标-硬件" /></svg>新手阶段</a>
+      </nav>
+      <a class="顶部动作" href="https://github.com/" target="_blank" rel="noreferrer">
+        <svg><use href="#图标-外链" /></svg>
+        GitHub
+      </a>
+    </header>
+
+    <main id="顶部">
+      <section class="首屏">
+        <div class="首屏文案">
+          <h1>工具都装好了，下一步做什么？</h1>
+          <p class="首屏说明">从好玩、好用、好搓三个方向，找到值得做、做得出来、做完有反馈的 AI 项目。</p>
+          <div class="首屏按钮组">
+            <button class="按钮 主要按钮" data-scroll="#项目雷达">
+              <svg><use href="#图标-雷达" /></svg>
+              开始扫雷达
+            </button>
+            <button class="按钮 次要按钮" data-scroll="#开工提示词">
+              <svg><use href="#图标-复制" /></svg>
+              查看开工提示词
+            </button>
+          </div>
+          <div class="承诺清单" aria-label="产品承诺">
+            <span><svg><use href="#图标-对勾" /></svg>从零开始</span>
+            <span><svg><use href="#图标-对勾" /></svg>项目可落地</span>
+            <span><svg><use href="#图标-对勾" /></svg>快速获得反馈</span>
+          </div>
+        </div>
+
+        <div class="雷达工作台" aria-label="项目雷达预览">
+          <div class="工作台头部">
+            <div>
+              <strong>项目雷达</strong>
+              <span class="扫描状态">扫描中...</span>
+            </div>
+            <button class="小按钮" id="刷新雷达">刷新</button>
+          </div>
+          <div class="雷达主体">
+            <div class="雷达图">
+              <span class="雷达光束"></span>
+              <span class="雷达点 点一"></span>
+              <span class="雷达点 点二"></span>
+              <span class="雷达点 点三"></span>
+              <span class="雷达点 点四"></span>
+              <button class="轴标签 标签好玩" data-radar="最好玩"><svg><use href="#图标-游戏" /></svg>最好玩</button>
+              <button class="轴标签 标签好用" data-radar="最好用"><svg><use href="#图标-效率" /></svg>最好用</button>
+              <button class="轴标签 标签好搓" data-radar="最好搓"><svg><use href="#图标-硬件" /></svg>最好搓</button>
+              <span class="雷达中心"></span>
+            </div>
+            <article class="精选卡">
+              <div class="标签行">
+                <span>新手友好</span>
+                <span>3-5天可完成</span>
+              </div>
+              <h2 id="雷达精选标题">AI封面生成器</h2>
+              <p id="雷达精选描述">做出能拿去发社媒和作品集的生成式小工具，反馈来得最快。</p>
+              <ul>
+                <li>完整体验闭环</li>
+                <li>AI 能力可见</li>
+                <li>容易二创</li>
+              </ul>
+              <button class="按钮 主要按钮 满宽" data-scroll="#项目雷达">查看项目详情</button>
+            </article>
+          </div>
+          <div class="雷达筛选条">
+            <span>筛选</span>
+            <button class="筛选丸 当前" data-radar="全部">全部</button>
+            <button class="筛选丸" data-radar="最好玩">最好玩</button>
+            <button class="筛选丸" data-radar="最好用">最好用</button>
+            <button class="筛选丸" data-radar="最好搓">最好搓</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="方向区" id="新手阶段" aria-labelledby="方向标题">
+        <div class="区块标题">
+          <h2 id="方向标题">第一步：用雷达找方向</h2>
+          <p>三条轴，帮你快速定位适合现在的项目。</p>
+        </div>
+        <div class="方向网格">
+          <article class="方向卡 好玩">
+            <svg><use href="#图标-游戏" /></svg>
+            <h3>最好玩</h3>
+            <p>有探索感、能激发创意的项目。</p>
+            <ul>
+              <li>新奇有趣的交互</li>
+              <li>创意驱动</li>
+              <li>成就感强</li>
+            </ul>
+          </article>
+          <article class="方向卡 好用">
+            <svg><use href="#图标-效率" /></svg>
+            <h3>最好用</h3>
+            <p>解决实际问题，能长期使用的项目。</p>
+            <ul>
+              <li>提升效率</li>
+              <li>真实需求</li>
+              <li>持续价值</li>
+            </ul>
+          </article>
+          <article class="方向卡 好搓">
+            <svg><use href="#图标-硬件" /></svg>
+            <h3>最好搓</h3>
+            <p>偏硬件、实体、小设备，适合动手党。</p>
+            <ul>
+              <li>技术门槛低</li>
+              <li>范围可控</li>
+              <li>快速交付</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="项目区" id="项目雷达" aria-labelledby="项目标题">
+        <div class="区块标题 行标题">
+          <div>
+            <h2 id="项目标题">挑一个能做完的项目</h2>
+            <p>每个项目都带理由、阶段、成品预览和可复制的开工提示词。</p>
+          </div>
+          <div class="迷你雷达" aria-hidden="true"></div>
+        </div>
+
+        <div class="分类标签组" role="tablist" aria-label="项目方向">
+          <button class="分类标签 当前" type="button" data-category="最好玩" role="tab" aria-selected="true"><svg><use href="#图标-游戏" /></svg>最好玩</button>
+          <button class="分类标签" type="button" data-category="最好用" role="tab" aria-selected="false"><svg><use href="#图标-效率" /></svg>最好用</button>
+          <button class="分类标签" type="button" data-category="最好搓" role="tab" aria-selected="false"><svg><use href="#图标-硬件" /></svg>最好搓</button>
+        </div>
+
+        <div class="过滤栏" aria-label="项目筛选">
+          <label>
+            <span>阶段</span>
+            <select id="阶段筛选">
+              <option value="全部">全部阶段</option>
+              <option value="入门友好">入门友好</option>
+              <option value="熟悉基础">熟悉基础</option>
+              <option value="想进阶">想进阶</option>
+            </select>
+          </label>
+          <label>
+            <span>周期</span>
+            <select id="周期筛选">
+              <option value="全部">全部周期</option>
+              <option value="1-2天">1-2天</option>
+              <option value="2-3天">2-3天</option>
+              <option value="3-5天">3-5天</option>
+            </select>
+          </label>
+          <button class="小按钮" type="button" id="重置筛选">重置</button>
+        </div>
+
+        <div class="项目工作台">
+          <aside class="项目列表" id="项目列表" aria-label="项目列表"></aside>
+          <article class="项目详情" aria-live="polite">
+            <div class="详情头部">
+              <div class="项目图标" id="详情图标">AI</div>
+              <div>
+                <h3 id="详情标题">AI封面生成器</h3>
+                <div class="详情标签" id="详情标签"></div>
+              </div>
+              <div class="难度盒">
+                <span>难度</span>
+                <strong id="详情难度">入门友好</strong>
+              </div>
+            </div>
+
+            <div class="详情标签页" role="tablist" aria-label="项目详情标签">
+              <button class="详情页签 当前" type="button" data-detail="why" role="tab" aria-selected="true">为什么值得做</button>
+              <button class="详情页签" type="button" data-detail="stage" role="tab" aria-selected="false">适合阶段</button>
+              <button class="详情页签" type="button" data-detail="preview" role="tab" aria-selected="false">成品预览</button>
+              <button class="详情页签" type="button" data-detail="prompt" role="tab" aria-selected="false" id="开工提示词">开工提示词</button>
+            </div>
+
+            <div class="详情内容区">
+              <div class="理由列表" id="理由列表"></div>
+              <div class="预览框" id="成品预览" aria-label="成品预览"></div>
+            </div>
+
+            <div class="提示词区域">
+              <div class="提示词头">
+                <strong>开工提示词（复制可用）</strong>
+                <button class="按钮 复制按钮" id="复制项目提示词" type="button">
+                  <svg><use href="#图标-复制" /></svg>
+                  复制提示词
+                </button>
+              </div>
+              <pre id="项目提示词"></pre>
+              <div class="GitHub行">
+                <span>原项目 GitHub</span>
+                <a id="GitHub链接" href="#" target="_blank" rel="noreferrer"></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="明星区" id="明星项目" aria-labelledby="明星标题">
+        <div class="区块标题 行标题">
+          <div>
+            <h2 id="明星标题">本周 GitHub 明星项目</h2>
+            <p>自动追踪增长最快的开源项目，挑出适合 Vibe Coding 新手拆解、复刻和二创的灵感。</p>
+          </div>
+          <div class="明星动作">
+            <a class="按钮 次要按钮" href="https://github.com/trending" target="_blank" rel="noreferrer">
+              <svg><use href="#图标-外链" /></svg>
+              查看 GitHub
+            </a>
+            <button class="按钮 暗色按钮" type="button" data-scroll="#项目雷达">
+              <svg><use href="#图标-雷达" /></svg>
+              加入雷达
+            </button>
+          </div>
+        </div>
+
+        <div class="榜单过滤" aria-label="明星项目过滤">
+          <button class="榜单按钮 当前" data-star-filter="本周增长">本周增长</button>
+          <button class="榜单按钮" data-star-filter="适合复刻">适合复刻</button>
+          <button class="榜单按钮" data-star-filter="AI 工具">AI 工具</button>
+          <button class="榜单按钮" data-star-filter="开发工具">开发工具</button>
+        </div>
+
+        <div class="明星布局">
+          <div class="明星表" id="明星表" role="table" aria-label="GitHub 明星项目榜单"></div>
+          <aside class="雷达读数">
+            <h3>本周雷达读数</h3>
+            <p class="周范围">6月22日 - 6月28日</p>
+            <div class="读数组">
+              <article>
+                <strong>AI 智能体平台化</strong>
+                <p>本周 Agent-Reach 和 cognee 爆发，说明 AI 智能体正从演示走向基础设施。</p>
+              </article>
+              <article>
+                <strong>设计即代码</strong>
+                <p>design.md 走红代表 AI 编码正在催生「给 AI 看的设计规范」新品类。</p>
+              </article>
+              <article>
+                <strong>语音与克隆热门</strong>
+                <p>voicebox 和 AI 网站克隆类项目增长快，适合新手快速复刻练手。</p>
+              </article>
+            </div>
+            <button class="按钮 次要按钮 满宽" type="button" id="复制周报提示词">
+              <svg><use href="#图标-复制" /></svg>
+              复制本周入门提示词
+            </button>
+          </aside>
+        </div>
+
+        <div class="行动条">
+          <div>
+            <strong>复制本周入门提示词，快速开始你的第一个项目</strong>
+            <p>基于热门项目生成可直接使用的 Starter Prompt。</p>
+          </div>
+          <code id="周报提示词预览">用 Agent-Reach 或 cognee 的架构思路，实现一个能跨平台收集信息并持久记忆的 AI 研究助手。</code>
+          <button class="按钮 主要按钮" type="button" id="复制行动提示词">
+            <svg><use href="#图标-复制" /></svg>
+            复制
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="页脚">
+      <div class="页脚品牌">
+        <span class="品牌图标"><svg><use href="#图标-雷达" /></svg></span>
+        <div>
+          <strong>Vibe Coding 雷达</strong>
+          <p>不背技术栈，不排学习路径，只帮你找到值得做、做得出来、做完有反馈的项目。</p>
+        </div>
+      </div>
+      <div class="页脚列">
+        <a href="#项目雷达">本周榜单</a>
+        <a href="#项目雷达">项目库</a>
+      </div>
+      <div class="页脚列">
+        <a href="#明星项目">订阅更新</a>
+        <a href="#项目雷达">提交项目</a>
+      </div>
+      <div class="页脚列">
+        <a href="#新手阶段">新手指南</a>
+        <a href="#开工提示词">提示词库</a>
+      </div>
+    </footer>
+
+    <div class="提示浮层" id="提示浮层" role="status" aria-live="polite">
+      <svg><use href="#图标-对勾" /></svg>
+      <span>提示词已复制</span>
+    </div>
+
+    <script src="./交互.js"></script>
+  </body>
+</html>
