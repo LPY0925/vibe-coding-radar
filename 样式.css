@@ -144,6 +144,7 @@ svg {
 }
 
 .顶部动作,
+.自动更新按钮,
 .小按钮,
 .筛选丸,
 .榜单按钮 {
@@ -159,13 +160,23 @@ svg {
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
-.顶部动作 {
+.顶部动作,
+.自动更新按钮 {
   height: 40px;
   padding: 0 14px;
   font-size: 14px;
 }
 
+.自动更新按钮 {
+  color: #043116;
+  border-color: rgba(23, 240, 111, 0.5);
+  background: linear-gradient(180deg, rgba(82, 255, 155, 0.95), rgba(17, 216, 97, 0.88));
+  box-shadow: 0 0 22px rgba(23, 240, 111, 0.16);
+  white-space: nowrap;
+}
+
 .顶部动作:hover,
+.自动更新按钮:hover,
 .小按钮:hover,
 .筛选丸:hover,
 .榜单按钮:hover {
@@ -1479,5 +1490,716 @@ pre {
     left: 16px;
     right: 16px;
     top: 18px;
+  }
+}
+
+/* 暗场扫描控制台主题 */
+:root {
+  --背景: #02070d;
+  --纸面: rgba(6, 17, 27, 0.92);
+  --墨色: #f5fff8;
+  --正文: #b7c7d8;
+  --浅字: #7f96aa;
+  --边线: rgba(61, 239, 142, 0.22);
+  --淡线: rgba(87, 153, 184, 0.18);
+  --绿色: #17f06f;
+  --绿色深: #08b953;
+  --绿色浅: rgba(23, 240, 111, 0.12);
+  --蓝色: #38a8ff;
+  --蓝色浅: rgba(56, 168, 255, 0.13);
+  --珊瑚: #ff7a3d;
+  --珊瑚浅: rgba(255, 122, 61, 0.13);
+  --黄色: #ffc857;
+  --阴影: 0 28px 80px rgba(0, 0, 0, 0.38), 0 0 44px rgba(23, 240, 111, 0.08);
+  --柔影: 0 18px 46px rgba(0, 0, 0, 0.32);
+  color-scheme: dark;
+}
+
+body {
+  color: var(--墨色);
+  background:
+    linear-gradient(90deg, rgba(23, 240, 111, 0.055) 1px, transparent 1px) 0 0 / 42px 42px,
+    linear-gradient(0deg, rgba(56, 168, 255, 0.045) 1px, transparent 1px) 0 0 / 42px 42px,
+    linear-gradient(115deg, rgba(23, 240, 111, 0.07), transparent 26%, transparent 62%, rgba(255, 122, 61, 0.055)),
+    #02070d;
+}
+
+body::selection {
+  background: rgba(23, 240, 111, 0.28);
+  color: #ffffff;
+}
+
+.顶部栏 {
+  border-bottom-color: rgba(95, 238, 170, 0.16);
+  background: rgba(2, 8, 14, 0.88);
+  box-shadow: 0 1px 0 rgba(23, 240, 111, 0.11), 0 18px 36px rgba(0, 0, 0, 0.28);
+}
+
+.品牌,
+.页脚品牌 {
+  color: #f7fff9;
+}
+
+.品牌图标 {
+  color: var(--绿色);
+  border: 1px solid rgba(23, 240, 111, 0.26);
+  border-radius: 8px;
+  background: rgba(23, 240, 111, 0.08);
+  box-shadow: inset 0 0 22px rgba(23, 240, 111, 0.1), 0 0 24px rgba(23, 240, 111, 0.12);
+}
+
+.顶部工具 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.语言切换 {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 82px;
+  height: 40px;
+  padding: 3px;
+  border: 1px solid rgba(126, 159, 184, 0.28);
+  border-radius: 8px;
+  background: rgba(4, 12, 19, 0.92);
+  color: #8ca3b6;
+  font-size: 13px;
+  font-weight: 850;
+  box-shadow: inset 0 0 18px rgba(56, 168, 255, 0.05);
+}
+
+.语言切换 span {
+  display: grid;
+  place-items: center;
+  height: 32px;
+  border-radius: 6px;
+}
+
+.语言切换[data-current="zh"] [data-language-option="zh"],
+.语言切换[data-current="en"] [data-language-option="en"] {
+  color: #021009;
+  background: var(--绿色);
+  box-shadow: 0 0 18px rgba(23, 240, 111, 0.35);
+}
+
+.导航 a {
+  color: #aabed0;
+}
+
+.导航 a:hover,
+.导航 a:focus-visible {
+  color: var(--绿色);
+  border-bottom-color: var(--绿色);
+  text-shadow: 0 0 18px rgba(23, 240, 111, 0.32);
+}
+
+.顶部动作,
+.自动更新按钮,
+.小按钮,
+.筛选丸,
+.榜单按钮 {
+  border-color: rgba(126, 159, 184, 0.26);
+  background: rgba(6, 17, 27, 0.84);
+  color: #c8d8e8;
+}
+
+.顶部动作:hover,
+.自动更新按钮:hover,
+.小按钮:hover,
+.筛选丸:hover,
+.榜单按钮:hover {
+  border-color: rgba(23, 240, 111, 0.65);
+  color: var(--绿色);
+  background: rgba(23, 240, 111, 0.08);
+}
+
+.自动更新按钮 {
+  color: #03130a;
+  border-color: rgba(23, 240, 111, 0.62);
+  background: linear-gradient(180deg, #5dffaa, #16dc67 54%, #08b953);
+  box-shadow: 0 0 24px rgba(23, 240, 111, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.自动更新按钮 svg {
+  width: 18px;
+  height: 18px;
+}
+
+.自动更新按钮:hover {
+  color: #03130a;
+  background: linear-gradient(180deg, #7affbc, #23ee78 54%, #10c85d);
+  transform: translateY(-1px);
+}
+
+.首屏 {
+  min-height: 760px;
+}
+
+.首屏眉标 {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin: 0 0 22px;
+  padding: 0 12px;
+  border-left: 3px solid var(--绿色);
+  color: var(--绿色);
+  background: linear-gradient(90deg, rgba(23, 240, 111, 0.12), transparent);
+  font-size: 14px;
+  font-weight: 860;
+}
+
+.首屏文案 h1 {
+  color: #ffffff;
+  text-shadow: 0 0 24px rgba(126, 255, 185, 0.16);
+}
+
+.首屏说明,
+.精选卡 p,
+.区块标题 p,
+.方向卡 p,
+.理由项 p,
+.读数组 p,
+.行动条 p,
+.页脚品牌 p,
+.明星说明,
+.项目名块 span,
+.增长 {
+  color: var(--正文);
+}
+
+.承诺清单 {
+  color: #b5c7d9;
+}
+
+.按钮 {
+  border-radius: 8px;
+}
+
+.主要按钮 {
+  color: #03130a;
+  background: linear-gradient(180deg, #52ff9b, #11d861 52%, #08a94c);
+  box-shadow: 0 16px 36px rgba(23, 240, 111, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.主要按钮:hover {
+  box-shadow: 0 22px 48px rgba(23, 240, 111, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+.次要按钮 {
+  border-color: rgba(126, 159, 184, 0.28);
+  background: rgba(4, 12, 19, 0.72);
+  color: #d6e8f5;
+}
+
+.次要按钮:hover {
+  border-color: rgba(56, 168, 255, 0.72);
+  color: #72c5ff;
+  background: rgba(56, 168, 255, 0.1);
+}
+
+.暗色按钮 {
+  border-color: rgba(23, 240, 111, 0.42);
+  color: #04150b;
+  background: var(--绿色);
+}
+
+.雷达工作台,
+.项目工作台,
+.项目详情,
+.雷达读数,
+.行动条,
+.明星表,
+.方向卡,
+.精选卡 {
+  border-color: rgba(96, 231, 163, 0.22);
+  background:
+    linear-gradient(180deg, rgba(10, 31, 48, 0.92), rgba(4, 13, 22, 0.95)),
+    var(--纸面);
+  box-shadow: var(--阴影);
+}
+
+.雷达工作台 {
+  position: relative;
+}
+
+.雷达工作台::before,
+.项目工作台::before,
+.明星表::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(23, 240, 111, 0.08), transparent) 0 0 / 100% 1px,
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 22%);
+}
+
+.工作台头部,
+.雷达筛选条,
+.详情头部,
+.详情标签页,
+.提示词头,
+.GitHub行,
+.项目列表,
+.明星行,
+.读数组 article {
+  border-color: var(--淡线);
+}
+
+.工作台头部 strong,
+.区块标题 h2,
+.精选卡 h2,
+.方向卡 h3,
+.项目项 h3,
+.详情头部 h3,
+.雷达读数 h3,
+.读数组 strong,
+.行动条 strong {
+  color: #f7fff9;
+}
+
+.扫描状态 {
+  color: #91a9b9;
+}
+
+.扫描状态::before {
+  background: var(--绿色);
+  box-shadow: 0 0 0 6px rgba(23, 240, 111, 0.1), 0 0 18px rgba(23, 240, 111, 0.65);
+}
+
+.雷达主体 {
+  background:
+    linear-gradient(90deg, rgba(23, 240, 111, 0.04) 1px, transparent 1px) 0 0 / 28px 28px,
+    linear-gradient(0deg, rgba(56, 168, 255, 0.035) 1px, transparent 1px) 0 0 / 28px 28px;
+}
+
+.雷达图 {
+  background:
+    radial-gradient(circle, transparent 0 17%, rgba(23, 240, 111, 0.16) 17.5% 18%, transparent 18.5% 34%, rgba(23, 240, 111, 0.14) 34.5% 35%, transparent 35.5% 51%, rgba(56, 168, 255, 0.11) 51.5% 52%, transparent 52.5% 68%, rgba(56, 168, 255, 0.1) 68.5% 69%, transparent 69.5%),
+    conic-gradient(from 320deg, rgba(23, 240, 111, 0.68) 0deg, rgba(23, 240, 111, 0.18) 48deg, transparent 62deg 360deg),
+    #03121c;
+  box-shadow: inset 0 0 42px rgba(23, 240, 111, 0.08);
+}
+
+.雷达图::before,
+.雷达图::after {
+  background:
+    linear-gradient(90deg, transparent calc(50% - 0.5px), rgba(23, 240, 111, 0.2) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+    linear-gradient(0deg, transparent calc(50% - 0.5px), rgba(56, 168, 255, 0.16) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+}
+
+.雷达光束 {
+  background: linear-gradient(45deg, rgba(23, 240, 111, 0.72), rgba(23, 240, 111, 0.16) 50%, transparent 72%);
+  filter: drop-shadow(0 0 14px rgba(23, 240, 111, 0.72));
+}
+
+.雷达中心 {
+  border-color: #06131d;
+  background: var(--绿色);
+  box-shadow: 0 0 0 1px rgba(23, 240, 111, 0.65), 0 0 26px rgba(23, 240, 111, 0.75);
+}
+
+.雷达点 {
+  background: #c7d9e7;
+  box-shadow: 0 0 16px currentColor;
+}
+
+.轴标签 {
+  border-color: currentColor;
+  background: rgba(4, 12, 19, 0.86);
+  box-shadow: 0 0 18px rgba(23, 240, 111, 0.08);
+}
+
+.精选卡 ul {
+  border-color: rgba(23, 240, 111, 0.22);
+  color: #c8f7d9;
+  background: rgba(23, 240, 111, 0.08);
+}
+
+.标签行 span,
+.详情标签 span,
+.项目标签,
+.趋势标签 {
+  color: #9eb4c7;
+  background: rgba(126, 159, 184, 0.12);
+}
+
+.筛选丸.当前,
+.榜单按钮.当前 {
+  color: #021009;
+  background: var(--绿色);
+  border-color: var(--绿色);
+}
+
+.方向区 {
+  border-top-color: rgba(95, 238, 170, 0.16);
+}
+
+.方向卡 {
+  min-height: 224px;
+}
+
+.方向卡.好玩 {
+  background:
+    linear-gradient(135deg, rgba(23, 240, 111, 0.13), transparent 48%),
+    rgba(5, 18, 29, 0.94);
+}
+
+.方向卡.好用 {
+  background:
+    linear-gradient(135deg, rgba(56, 168, 255, 0.14), transparent 48%),
+    rgba(5, 18, 29, 0.94);
+}
+
+.方向卡.好搓 {
+  background:
+    linear-gradient(135deg, rgba(255, 122, 61, 0.14), transparent 48%),
+    rgba(5, 18, 29, 0.94);
+}
+
+.方向卡 ul {
+  color: #cad8e5;
+}
+
+.迷你雷达 {
+  background:
+    radial-gradient(circle, transparent 0 22%, rgba(23, 240, 111, 0.23) 22.5% 23%, transparent 23.5% 45%, rgba(56, 168, 255, 0.16) 45.5% 46%, transparent 46.5% 68%, rgba(56, 168, 255, 0.16) 68.5% 69%, transparent 69.5%),
+    conic-gradient(from 320deg, rgba(23, 240, 111, 0.58), transparent 95deg),
+    #04121d;
+  box-shadow: inset 0 0 28px rgba(23, 240, 111, 0.08), 0 0 24px rgba(23, 240, 111, 0.08);
+}
+
+.分类标签组,
+.榜单过滤 {
+  border-bottom-color: rgba(95, 238, 170, 0.18);
+}
+
+.分类标签 {
+  color: #9db2c5;
+}
+
+.分类标签.当前 {
+  color: var(--绿色);
+  border-bottom-color: var(--绿色);
+}
+
+.分类标签:nth-child(2).当前 {
+  color: var(--蓝色);
+  border-bottom-color: var(--蓝色);
+}
+
+.分类标签:nth-child(3).当前 {
+  color: var(--珊瑚);
+  border-bottom-color: var(--珊瑚);
+}
+
+.过滤栏 label {
+  color: #8ea5b7;
+}
+
+.过滤栏 select {
+  border-color: rgba(126, 159, 184, 0.28);
+  background: rgba(4, 12, 19, 0.86);
+  color: #d9e8f6;
+}
+
+.项目工作台 {
+  position: relative;
+}
+
+.项目列表 {
+  background: rgba(2, 8, 14, 0.64);
+}
+
+.项目项 {
+  border-bottom-color: rgba(87, 153, 184, 0.16);
+  color: #dce9f6;
+}
+
+.项目项:hover,
+.项目项.当前 {
+  background: linear-gradient(90deg, rgba(23, 240, 111, 0.13), rgba(23, 240, 111, 0.02));
+  border-left-color: var(--绿色);
+}
+
+.项目图标 {
+  color: #041009;
+  box-shadow: 0 12px 26px rgba(23, 240, 111, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.项目周期,
+.难度盒,
+.GitHub行 {
+  color: #8fa5b8;
+}
+
+.难度盒 strong,
+.详情页签.当前,
+.理由项 svg,
+.GitHub行 a,
+.排名,
+.增长 {
+  color: var(--绿色);
+}
+
+.详情页签 {
+  color: #9eb0c1;
+}
+
+.详情内容区 {
+  border-bottom-color: rgba(87, 153, 184, 0.18);
+}
+
+.理由列表 {
+  border-right-color: rgba(87, 153, 184, 0.18);
+}
+
+.预览框 {
+  background:
+    linear-gradient(90deg, rgba(23, 240, 111, 0.07) 1px, transparent 1px) 0 0 / 34px 34px,
+    linear-gradient(0deg, rgba(56, 168, 255, 0.05) 1px, transparent 1px) 0 0 / 34px 34px,
+    #03101a;
+}
+
+.预览设备 {
+  border-color: rgba(95, 238, 170, 0.22);
+  background: rgba(5, 18, 29, 0.96);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.32), 0 0 32px rgba(23, 240, 111, 0.06);
+}
+
+.预览栏 {
+  border-bottom-color: rgba(87, 153, 184, 0.18);
+  color: #9bb2c4;
+}
+
+.预览线,
+.预览按钮,
+.预览缩略图 {
+  background: rgba(126, 159, 184, 0.16);
+}
+
+.复制按钮 {
+  background: linear-gradient(180deg, #57bfff, #1d83e5);
+  color: #02101f;
+}
+
+pre {
+  border-color: rgba(23, 240, 111, 0.42);
+  background:
+    linear-gradient(90deg, rgba(23, 240, 111, 0.05) 1px, transparent 1px) 0 0 / 24px 24px,
+    #020b12;
+  color: #c8f7d9;
+  box-shadow: inset 0 0 22px rgba(23, 240, 111, 0.06);
+}
+
+.明星表 {
+  position: relative;
+}
+
+.明星行.表头 {
+  background: rgba(23, 240, 111, 0.12);
+  color: #d9fbe6;
+}
+
+.明星行 {
+  border-bottom-color: rgba(87, 153, 184, 0.16);
+}
+
+.明星图标 {
+  background: rgba(23, 240, 111, 0.12);
+  color: var(--绿色);
+  box-shadow: inset 0 0 18px rgba(23, 240, 111, 0.08);
+}
+
+.语言点 {
+  color: #d5e5f0;
+}
+
+.行动条 {
+  border-color: rgba(56, 168, 255, 0.42);
+  background:
+    linear-gradient(90deg, rgba(56, 168, 255, 0.12), rgba(23, 240, 111, 0.08)),
+    rgba(5, 18, 29, 0.92);
+}
+
+.行动条 code {
+  border-color: rgba(56, 168, 255, 0.44);
+  color: #a6dcff;
+  background: rgba(3, 14, 23, 0.84);
+}
+
+.页脚 {
+  background:
+    linear-gradient(90deg, rgba(23, 240, 111, 0.12), transparent 38%),
+    #02070d;
+  border-top: 1px solid rgba(95, 238, 170, 0.16);
+}
+
+.页脚列 a {
+  color: #adc1d4;
+}
+
+.页脚列 a:hover {
+  color: var(--绿色);
+}
+
+.提示浮层 {
+  border-color: rgba(23, 240, 111, 0.42);
+  background: rgba(5, 18, 29, 0.96);
+  color: #dcfce7;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.36), 0 0 28px rgba(23, 240, 111, 0.12);
+}
+
+.阶段面板 {
+  display: grid;
+  gap: 22px;
+  align-content: center;
+  min-height: 330px;
+  padding: 34px;
+  background:
+    linear-gradient(90deg, rgba(23, 240, 111, 0.07) 1px, transparent 1px) 0 0 / 34px 34px,
+    linear-gradient(0deg, rgba(56, 168, 255, 0.05) 1px, transparent 1px) 0 0 / 34px 34px,
+    #03101a;
+}
+
+.阶段摘要 {
+  padding: 24px;
+  border: 1px solid rgba(23, 240, 111, 0.24);
+  border-radius: var(--圆角);
+  background: linear-gradient(135deg, rgba(23, 240, 111, 0.12), rgba(56, 168, 255, 0.06));
+}
+
+.阶段徽章 {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 6px;
+  color: #021009;
+  background: var(--绿色);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.阶段摘要 h4 {
+  margin: 18px 0 8px;
+  color: #f7fff9;
+  font-size: 22px;
+}
+
+.阶段摘要 p {
+  margin: 0;
+  color: var(--正文);
+  line-height: 1.75;
+}
+
+.阶段指标网格 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.阶段指标 {
+  min-height: 118px;
+  padding: 18px;
+  border: 1px solid rgba(126, 159, 184, 0.2);
+  border-radius: var(--圆角);
+  background: rgba(5, 18, 29, 0.86);
+}
+
+.阶段指标 span {
+  display: block;
+  margin-bottom: 10px;
+  color: #8ea5b7;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.阶段指标 strong {
+  color: #e8fff0;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.项目详情:not([data-active-detail="prompt"]) .提示词区域,
+.项目详情[data-active-detail="why"] .阶段面板,
+.项目详情[data-active-detail="stage"] .理由列表,
+.项目详情[data-active-detail="prompt"] .详情内容区 {
+  display: none;
+}
+
+.项目详情[data-active-detail="why"] .详情内容区,
+.项目详情[data-active-detail="stage"] .详情内容区 {
+  grid-template-columns: 1fr;
+}
+
+.项目详情[data-active-detail="why"] .理由列表 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-right: 0;
+  background:
+    linear-gradient(90deg, rgba(23, 240, 111, 0.04) 1px, transparent 1px) 0 0 / 34px 34px,
+    #03101a;
+}
+
+.项目详情[data-active-detail="why"] .理由项 {
+  grid-template-columns: 34px 1fr;
+  min-height: 164px;
+  padding: 22px;
+  border: 1px solid rgba(23, 240, 111, 0.2);
+  border-radius: var(--圆角);
+  background: rgba(5, 18, 29, 0.82);
+}
+
+.项目详情[data-active-detail="prompt"] .提示词区域 {
+  display: block;
+  min-height: 430px;
+  background:
+    linear-gradient(90deg, rgba(23, 240, 111, 0.05) 1px, transparent 1px) 0 0 / 34px 34px,
+    #03101a;
+}
+
+@media (max-width: 860px) {
+  .顶部工具 {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .顶部动作 {
+    display: none;
+  }
+
+  .首屏 {
+    padding-top: 38px;
+  }
+
+  .项目详情[data-active-detail="why"] .理由列表,
+  .阶段指标网格 {
+    grid-template-columns: 1fr;
+  }
+
+  .阶段面板 {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .语言切换 {
+    width: 96px;
+  }
+
+  .自动更新按钮 {
+    max-width: 210px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .首屏眉标 {
+    align-items: flex-start;
+    height: auto;
+    padding: 7px 12px;
+    line-height: 1.5;
   }
 }

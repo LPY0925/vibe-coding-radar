@@ -1,3 +1,9 @@
 node_modules/
 .env
+.env.*
 *.log
+*.tmp
+*.bak
+*.local
+截图/
+screenshots/

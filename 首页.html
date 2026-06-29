@@ -58,15 +58,26 @@
         <a href="#明星项目"><svg><use href="#图标-星" /></svg>明星项目</a>
         <a href="#新手阶段"><svg><use href="#图标-硬件" /></svg>新手阶段</a>
       </nav>
-      <a class="顶部动作" href="https://github.com/" target="_blank" rel="noreferrer">
-        <svg><use href="#图标-外链" /></svg>
-        GitHub
-      </a>
+      <div class="顶部工具">
+        <button class="语言切换" id="语言切换" type="button" aria-label="切换到英文" aria-pressed="false">
+          <span data-language-option="zh">中</span>
+          <span data-language-option="en">EN</span>
+        </button>
+        <button class="自动更新按钮" id="复制自动更新提示词" type="button">
+          <svg><use href="#图标-复制" /></svg>
+          复制自动更新提示词
+        </button>
+        <a class="顶部动作" href="https://github.com/" target="_blank" rel="noreferrer">
+          <svg><use href="#图标-外链" /></svg>
+          GitHub
+        </a>
+      </div>
     </header>
 
     <main id="顶部">
       <section class="首屏">
         <div class="首屏文案">
+          <p class="首屏眉标">暗场扫描控制台 · 为 Codex / Claude Code 新手准备</p>
           <h1>工具都装好了，下一步做什么？</h1>
           <p class="首屏说明">从好玩、好用、好搓三个方向，找到值得做、做得出来、做完有反馈的 AI 项目。</p>
           <div class="首屏按钮组">
@@ -174,7 +185,7 @@
         <div class="区块标题 行标题">
           <div>
             <h2 id="项目标题">挑一个能做完的项目</h2>
-            <p>每个项目都带理由、阶段、成品预览和可复制的开工提示词。</p>
+            <p>每个项目都带理由、阶段判断和可复制的开工提示词。</p>
           </div>
           <div class="迷你雷达" aria-hidden="true"></div>
         </div>
@@ -209,7 +220,7 @@
 
         <div class="项目工作台">
           <aside class="项目列表" id="项目列表" aria-label="项目列表"></aside>
-          <article class="项目详情" aria-live="polite">
+          <article class="项目详情" aria-live="polite" data-active-detail="why">
             <div class="详情头部">
               <div class="项目图标" id="详情图标">AI</div>
               <div>
@@ -225,13 +236,12 @@
             <div class="详情标签页" role="tablist" aria-label="项目详情标签">
               <button class="详情页签 当前" type="button" data-detail="why" role="tab" aria-selected="true">为什么值得做</button>
               <button class="详情页签" type="button" data-detail="stage" role="tab" aria-selected="false">适合阶段</button>
-              <button class="详情页签" type="button" data-detail="preview" role="tab" aria-selected="false">成品预览</button>
               <button class="详情页签" type="button" data-detail="prompt" role="tab" aria-selected="false" id="开工提示词">开工提示词</button>
             </div>
 
             <div class="详情内容区">
               <div class="理由列表" id="理由列表"></div>
-              <div class="预览框" id="成品预览" aria-label="成品预览"></div>
+              <div class="阶段面板" id="阶段面板"></div>
             </div>
 
             <div class="提示词区域">
